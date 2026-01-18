@@ -1,20 +1,15 @@
-# Write your corrected implementation for Task 1 here.
-# Do not modify `task1.py`.
+# Write your corrected implementation for Task 2 here.
+# Do not modify `task2.py`.
 def calculate_average_order_value(orders):
-    if not orders:
-        return 0.0
-
-    total = 0.0
+    total = 0
     valid_count = 0
 
     for order in orders:
-        if order.get("status") != "cancelled":
-            amount = order.get("amount")
-            if isinstance(amount, (int, float)):
-                total += amount
-                valid_count += 1
+        if order["status"] != "cancelled":
+            total += order["amount"]
+            valid_count += 1
 
     if valid_count == 0:
-        return 0.0
+        return 0
 
     return total / valid_count
